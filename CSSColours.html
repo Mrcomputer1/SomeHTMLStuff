@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Colours</title>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				var l = document.getElementById("tmpl").innerHTML.split("\n");
+				for(var color in l){
+					var li = l[color];
+					document.getElementById("insert").innerHTML += "<span style='color:" + li + "'>" + li + "</span><br>";
+				}
+				document.getElementById("toggledark").onclick = function(e){
+					e.target.style.display = "none";
+					document.body.style.backgroundColor = "black";
+					document.getElementById("togglelight").style.display = "block";
+					document.getElementById("bgcolor-text").innerText = "black";
+				};
+				document.getElementById("togglelight").onclick = function(e){
+					e.target.style.display = "none";
+					document.body.style.backgroundColor = "white";
+					document.getElementById("toggledark").style.display = "block";
+					document.getElementById("bgcolor-text").innerText = "white";
+				};
+				var el = document.getElementsByTagName("span");
+				for(var e in el){
+					var ele = el[e];
+					ele.onclick = function(e){
+						document.body.style.backgroundColor = e.target.style.color;
+						document.getElementById("bgcolor-text").innerText = e.target.style.color;
+					}
+				}
+				document.getElementById("bgcolor").onclick = function(e){
+					document.body.style.backgroundColor = "black";
+					document.getElementById("togglelight").style.display = "block";
+					document.getElementById("toggledark").style.display = "none";
+					document.getElementById("bgcolor-text").innerText = "black";
+				};
+				document.getElementById("cp-tryit").onclick = function(e){
+					var c = prompt("Enter a colour", "black");
+					document.body.style.backgroundColor = c;
+					document.getElementById("bgcolor-text").innerText = c;
+				};
+			});
+		</script>
+		<style>
+		body{
+			background-color: black;
+		}
+		#toggledark{
+			background-color: black;
+			color: white;
+			padding: 10px;
+			position: fixed;
+			top: 5px;
+			right: 5px;
+			cursor: pointer;
+		}
+		#togglelight{
+			background-color: white;
+			color: black;
+			padding: 10px;
+			position: fixed;
+			top: 5px;
+			right: 5px;
+			cursor: pointer;
+		}
+		#msg{
+			color: red;
+			bottom: 5px;
+			right: 5px;
+			position: fixed;
+		}
+		#bgcolor{
+			top: 5px;
+			left: 50%;
+			transform: translateX(-50%);
+			position: fixed;
+			color: white;
+			background-color: red;
+			padding: 5px;
+		}
+		#cp{
+			bottom: 5px;
+			left: 50%;
+			transform: translateX(-50%);
+			position: fixed;
+			color: white;
+			background-color: red;
+			padding: 5px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="toggledark"  style="display:none">
+			Toggle Dark Background
+		</div>
+		<div id="togglelight">
+			Toggle Light Background
+		</div>
+		<div id="msg">
+			Press any colour to change background to it.
+		</div>
+		<div id="bgcolor">
+			Background Colour: <i id="bgcolor-text">black</i> - Click to reset
+		</div>
+		<div id="cp">
+			<span id='cp-tryit'>Enter a colour</span>
+		</div>
+		<pre id="tmpl" style="display:none">aliceblue
+antiquewhite
+aqua
+aquamarine
+azure
+beige
+bisque
+black
+blanchedalmond
+blue
+blueviolet
+brown
+burlywood
+cadetblue
+chartreuse
+chocolate
+coral
+cornflowerblue
+cornsilk
+crimson
+cyan
+darkseagreen
+darkblue
+darkcyan
+darkgoldenrod
+darkgray
+darkgreen
+darkgrey
+darkkhaki
+darkmagenta
+darkolivegreen
+darkorange
+darkorchid
+darkred
+darksalmon
+darkslateblue
+darkslategray
+darkslategrey
+darkturquoise
+darkviolet
+deeppink
+deepskyblue
+dimgray
+dimgrey
+dodgerblue
+firebrick
+floralwhite
+forestgreen
+fuchsia
+gainsboro
+ghostwhite
+gold
+goldenrod
+gray
+green
+greenyellow
+grey
+honeydew
+hotpink
+indianred
+indigo
+ivory
+khaki
+lavender
+lavenderblush
+lawngreen
+lemonchiffon
+lightblue
+lightcoral
+lightcyan
+lightgoldenrodyellow
+lightgray
+lightgreen
+lightgrey
+lightpink
+lightsalmon
+lightseagreen
+lightskyblue
+lightslategray
+lightslategrey
+lightsteelblue
+lightyellow
+lime
+limegreen
+linen
+magenta
+maroon
+mediumaquamarine
+mediumblue
+mediumorchid
+mediumpurple
+mediumseagreen
+mediumslateblue
+mediumspringgreen
+mediumturquoise
+mediumvioletred
+midnightblue
+mintcream
+mistyrose
+moccasin
+navajowhite
+navy
+oldlace
+olive
+olivedrab
+orange
+orangered
+orchid
+palegoldenrod
+palegreen
+paleturquoise
+palevioletred
+papayawhip
+peachpuff
+peru
+pink
+plum
+powderblue
+purple
+rebeccapurple
+red
+rosybrown
+royalblue
+saddlebrown
+salmon
+sandybrown
+seagreen
+seashell
+sienna
+silver
+skyblue
+slateblue
+slategray
+slategrey
+snow
+springgreen
+steelblue
+tan
+teal
+thistle
+tomato
+turquoise
+violet
+wheat
+white
+whitesmoke
+yellow
+yellowgreen
+		</pre>
+		<div id="insert">
+		
+		</div>
+	</body>
+</html>
