@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Grid (with rows)</title>
+    <style>
+      #grid{
+        display: grid;
+        grid-template-columns: 50px 50px 50px;
+        grid-gap: 10px;
+      }
+      #grid-2{
+        grid-column: 2;
+        grid-row: 2;
+      }
+      #grid-3{
+        grid-column: 3;
+        grid-row: 3;
+      }
+      #grid-4{
+        grid-column: 1;
+        grid-row: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grid">
+      <div id="grid-1">
+        Hello
+      </div>
+      <div id="grid-2">
+        Hi
+      </div>
+      <div id="grid-3">
+        Bye
+      </div>
+      <div id="grid-4">
+        Goodbye
+      </div>
+    </div>
+  </body>
+</html>
