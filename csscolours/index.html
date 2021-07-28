@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Colours</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="colours.js"></script>
+		<script src="colourpicker.js" defer></script>
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="dialog" id="dialog-custom" style="display: none">
+			<div class="dialog-header">
+				Custom Colour Entry
+			</div>
+			<div class="dialog-content">
+				CSS Colour:<br>
+				<input type="text" id="css-colour-input" style="width:100%">
+			</div>
+			<div class="dialog-footer">
+				<button id="btn-custom-colour">OK</button>
+				<button class="btn-close-dialog">Close</button>
+			</div>
+		</div>
+		<div class="dialog" id="dialog-picker" style="display: none">
+			<div class="dialog-header">
+				Colour Picker
+			</div>
+			<div class="dialog-content">
+				<canvas id="picker-light" height=100 width=20></canvas>
+				<canvas id="picker-hue-sat" height=100 width=360></canvas>
+				<div id="picker-selected" class="colour-picker-palette">
+					<span class="white-black-a"><span class="white">A</span><span class="black">A</span></span>
+					<span id="picker-selected-text">No selected text.</span>
+				</div>
+			</div>
+			<div class="dialog-footer">
+				<button id="btn-picker-colour">OK</button>
+				<button class="btn-close-dialog">Close</button>
+			</div>
+		</div>
+		
+		<div id="container">
+			<div id="header">
+				<span class="button" id="btn-custom">Custom</span>
+				<span class="button" id="btn-picker">Colour Picker</span>
+			</div>
+			<div id="colour-list">
+				<ul>
+				</ul>
+			</div>
+			<div id="colour-preview">
+				<div id="aaa">
+					<span id="white-a" title="White">
+						A
+					</span>
+					<span id="black-a" title="Black">
+						A
+					</span>
+					<span id="last-a" title="Last Selected Colour">
+						A
+					</span>
+				</div>
+				<div id="chip">
+					Click a colour and it will appear here.
+				</div>
+			</div>
+			<div id="footer">
+				<a href="https://github.com/Mrcomputer1/SomeHTMLStuff/tree/master/csscolours/">Source Code</a>
+				&bullet;
+				Colour list defined in <a href="https://www.w3.org/TR/2018/REC-css-color-3-20180619/">W3C Recommendation 2018 - CSS Color Module Level 3</a>
+				&bullet;
+				rebeccapurple defined in <a href="https://drafts.csswg.org/css-color-4/">W3C Editor's Draft 2021 - CSS Color Module Level 4</a>
+			</div>
+		</div>
+	</body>
+</html>
