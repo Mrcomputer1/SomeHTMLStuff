@@ -28,7 +28,7 @@ function displayColour(e){
 	updateChipBuiltIn(e.target.dataset.name, e.target.dataset.hexCode);
 	
 	document.querySelector("#last-a").style.color = lastSelectedColour;
-	lastSelectedColour = "#" + parseInt(e.target.dataset.hexCode).toString(16);
+	lastSelectedColour = "#" + parseInt(e.target.dataset.hexCode).toString(16).padStart(6, "0");
 }
 
 function displayColourCustom(code){
@@ -87,10 +87,10 @@ document.querySelector("#btn-custom").onclick = function(){
 	document.querySelector("#dialog-custom").style.display = "block";
 };
 
-document.querySelector("#btn-picker").onclick = function(){
+/*document.querySelector("#btn-picker").onclick = function(){
 	document.querySelector("#dialog-picker").style.display = "block";
 	renderCanvas();
-};
+};*/
 
 document.querySelector("#btn-custom-colour").onclick = function(){
 	closeAllDialogs();
